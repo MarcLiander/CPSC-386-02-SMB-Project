@@ -22,27 +22,26 @@ class EventLoop:
     def check_keydown_events(self, event):
         if event.key == pygame.K_SPACE:
             if self.mario.is_on_ground:
-                self.mario.velocity_y = -12.0
+                self.mario.velocity_y = -20.01
                 self.mario.is_on_ground = False
                 self.mario.is_jumping = True
-                print(self.mario.velocity_y)
         if event.key == pygame.K_LEFT:
             if not self.mario.is_along_wall:
-                self.mario.accel_x -= 0.5
+                self.mario.accel_x -= 0.25
         if event.key == pygame.K_RIGHT:
             if not self.mario.is_along_wall:
-                self.mario.accel_x += 0.5
+                self.mario.accel_x += 0.25
         if event.key == pygame.K_q:
             sys.exit()
 
     def check_keyup_events(self, event):
         if event.key == pygame.K_SPACE:
-            if (self.mario.velocity_y < -6.0):
-                self.mario.velocity_y = -6.0
+            if (self.mario.velocity_y < -12.0):
+                self.mario.velocity_y = -12.0
         if event.key == pygame.K_LEFT:
-            self.mario.accel_x += 0.5
+            self.mario.accel_x += 0.25
         if event.key == pygame.K_RIGHT:
-            self.mario.accel_x -= 0.5
+            self.mario.accel_x -= 0.25
 
     def update_events(self):
         self.mario.update(self.map)

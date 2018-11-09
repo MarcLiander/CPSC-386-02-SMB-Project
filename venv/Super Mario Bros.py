@@ -22,7 +22,6 @@ class Game:
             self.map.create_level()
 
             while not eloop.finished:
-
                 eloop.update_events()
                 eloop.check_input_events()
                 eloop.update_screen()
