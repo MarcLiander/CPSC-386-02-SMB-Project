@@ -2,7 +2,7 @@ import pygame
 from pygame.sprite import Sprite
 
 class Goomba:
-    def __init__(self, ai_settings, screen, x, y):
+    def __init__(self, ai_settings, screen, x, y, id):
         super(Goomba, self).__init__()
 
         self.screen = screen
@@ -19,10 +19,17 @@ class Goomba:
         self.max_speed_y = 11.1
         self.gravity = 0.5
 
+        self.id = id
+
+        self.is_bounced_on = False
+        self.time_alive = 30
+
         self.color = (10, 200, 20)
 
-    def update(self, mario, blocks):
-        position_switch = self.side_of_blocks(blocks)
+    def update(self, mario, blocks, goombas, stats):
+        self.side_of_blocks(blocks)
+        if self.is_bounced_on:
+            self.velocity_x = 0
         self.x += self.velocity_x
         self.rect.x = self.x
 
@@ -34,18 +41,25 @@ class Goomba:
                 self.velocity_y = self.max_speed_y
             self.rect.y = self.y
 
-        self.collide_with_mario(mario)
+        if not self.is_bounced_on:
+            if not mario.is_dead:
+                self.collide_with_mario(mario, stats)
+            self.collide_with_other_goomba(goombas)
 
     def draw_goomba(self):
         pygame.draw.rect(self.screen, self.color, self.rect)
 
-    def collide_with_mario(self, mario):
-        if self.rect.collidepoint((mario.rect.left + (mario.rect.width / 2), mario.rect.bottom)) or self.rect.collidepoint((self.rect.right, self.rect.bottom)) or self.rect.collidepoint((mario.rect.left, mario.rect.bottom)):
-            mario.velocity_y = -4.0
-        if self.rect.collidepoint(mario.rect.topright) or self.rect.collidepoint(mario.rect.midright):
-            mario.velocity_x = -4.0
-        if self.rect.collidepoint(mario.rect.topleft) or self.rect.collidepoint(mario.rect.midleft):
-            mario.velocity_x = 4.0
+    def collide_with_mario(self, mario, stats):
+        if self.rect.collidepoint((mario.rect.left + (mario.rect.width / 2), mario.rect.bottom)) or self.rect.collidepoint((mario.rect.right, mario.rect.bottom)) or self.rect.collidepoint((mario.rect.left, mario.rect.bottom)):
+            mario.velocity_y = -8.0
+            stats.score += 100
+            self.is_bounced_on = True
+        if self.rect.collidepoint((mario.rect.right - 5, mario.rect.top + 7)) or self.rect.collidepoint(mario.rect.right - 5, mario.rect.top + (mario.rect.height / 2)):
+            mario.velocity_y = -12.0
+            mario.is_dead = True
+        if self.rect.collidepoint((mario.rect.left + 5, mario.rect.top + 7)) or self.rect.collidepoint(mario.rect.left +  5, mario.rect.top + (mario.rect.height / 2)):
+            mario.velocity_y = -12.0
+            mario.is_dead = True
 
     def collide_with_blocks(self, blocks):
         for block in blocks:
@@ -60,5 +74,8 @@ class Goomba:
         for block in blocks:
             if block.rect.collidepoint(self.rect.midleft) or block.rect.collidepoint(self.rect.midright):
                 self.velocity_x *= -1
-                return True
-        return False
+
+    def collide_with_other_goomba(self, goombas):
+        for goomba in goombas:
+            if (goomba.rect.collidepoint(self.rect.midleft) or goomba.rect.collidepoint(self.rect.midright)) and not self.id == goomba.id and not self.is_bounced_on and not goomba.is_bounced_on:
+                self.velocity_x *= -1

@@ -6,6 +6,9 @@ from enemies import Goomba
 from map import Map
 from brick import Block
 from game_events import EventLoop
+from scoreboard import Scoreboard
+from game_stats import GameStats
+from gameover import Gameover
 
 class Game:
         def __init__(self):
@@ -14,18 +17,32 @@ class Game:
             self.screen = pygame.display.set_mode((self.ai_settings.screen_width, self.ai_settings.screen_height))
             pygame.display.set_caption("Super Mario Bros Clone")
             self.mario_player = Mario(self.ai_settings, self.screen)
-            self.map = Map(self.ai_settings, self.screen, mapfile='Levels/first_level.txt')
+            self.map = Map(self.ai_settings, self.screen, mapfile='Levels/first_level.txt', blockfile='Images/block_tile.png')
+            self.stats = GameStats()
+            self.scoreboard = Scoreboard(self.ai_settings, self.screen, self.stats)
             self.clock = pygame.time.Clock()
+            self.gameover = Gameover(self.ai_settings, self.screen)
 
         def play(self):
-            eloop = EventLoop(self.ai_settings, self.screen, self.mario_player, self.map, finished = False)
-            self.map.create_level()
+            while True:
+                while self.stats.lives > 0:
+                    self.mario_player = Mario(self.ai_settings, self.screen)
+                    self.map = Map(self.ai_settings, self.screen, mapfile='Levels/first_level.txt', blockfile='Images/block_tile.png')
+                    eloop = EventLoop(self.ai_settings, self.screen, self.mario_player, self.map, self.stats, self.scoreboard, finished = False)
+                    self.map.create_level()
+                    while not eloop.finished:
+                        eloop.update_events()
+                        eloop.check_input_events()
+                        eloop.update_screen()
+                        self.clock.tick(30)
+                    self.stats.lives -= 1
+                    self.stats.score = 0
+                self.stats.reset_stats()
+                self.gameover.show_gameover()
+                pygame.time.wait(3000)
 
-            while not eloop.finished:
-                eloop.update_events()
-                eloop.check_input_events()
-                eloop.update_screen()
-                self.clock.tick(30)
+
+
 
 
 game = Game()
