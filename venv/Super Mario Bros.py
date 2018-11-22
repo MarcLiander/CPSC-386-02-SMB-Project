@@ -34,15 +34,13 @@ class Game:
                         eloop.update_events()
                         eloop.check_input_events()
                         eloop.update_screen()
-                        self.clock.tick(30)
+                        self.clock.tick(60)
+                        print(self.clock.get_fps())
                     self.stats.lives -= 1
                     self.stats.score = 0
                 self.stats.reset_stats()
                 self.gameover.show_gameover()
                 pygame.time.wait(3000)
-
-
-
 
 
 game = Game()

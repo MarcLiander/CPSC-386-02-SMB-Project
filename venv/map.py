@@ -18,39 +18,50 @@ class Map:
         self.blocks = []
         self.block_image = ImageRect(screen, blockfile, 32, 32)
 
-        self.goomba_id = 0
+        self.enemy_id = 0
 
         self.max_x_value = 0
 
     def create_level(self):
         dx = dy = 32
-
         for nrow in range(len(self.rows)):
             row = self.rows[nrow]
             for ncol in range(len(row)):
                 col = row[ncol]
                 if col == 'x':
-                    self.blocks.append(Block(self.screen, ncol * dx, nrow * dy))
+                    self.blocks.append(Block(self.screen, ncol * dx, nrow * dy, 0))
+                if col == 'b':
+                    self.blocks.append(Block(self.screen, ncol * dx, nrow * dy, 1))
                 if col == 'g':
-                    self.goombas.append(Goomba(self.ai_settings, self.screen, ncol * dx, nrow * dy, self.goomba_id))
-                    self.goomba_id += 1
+                    self.goombas.append(Goomba(self.ai_settings, self.screen, ncol * dx, nrow * dy, self.enemy_id, 0))
+                    self.enemy_id += 1
                 if ncol * dx > self.max_x_value:
                     self.max_x_value = ncol * dx
 
     def draw_map(self):
         for block in self.blocks:
             if block.rect.left < self.screen_rect.right:
-                self.screen.blit(self.block_image.image  , block.rect)
+                block.draw_block(self.block_image.image)
         for goomba in self.goombas:
             if goomba.rect.left < self.screen_rect.right:
                 goomba.draw_goomba()
 
     def update_map(self, mario, stats):
+        if mario.x >= self.screen_rect.width / 2 and abs(mario.velocity_x) > 0 and self.screen_rect.right < self.max_x_value:
+            if mario.velocity_x > 0:
+                mario.x = self.screen_rect.width / 2 - int(mario.velocity_x)
+            else:
+                mario.x = self.screen_rect.width / 2
+
+            for block in self.blocks:
+                block.x -= int(mario.velocity_x)
+            for goomba in self.goombas:
+                goomba.x -= int(mario.velocity_x)
+            self.max_x_value -= mario.velocity_x
+
         for goomba in self.goombas:
             if goomba.rect.top > self.screen_rect.height or goomba.rect.right < self.screen_rect.left or goomba.is_bounced_on:
-                True
                 goomba.time_alive -= 1
-                print(goomba.time_alive)
                 if goomba.time_alive <= 0:
                     self.goombas.remove(goomba)
             if goomba.x < self.screen_rect.right:
@@ -60,10 +71,3 @@ class Map:
                 self.blocks.remove(block)
             elif block.x < self.screen_rect.right:
                 block.update()
-        if mario.x >= self.screen_rect.width / 2 and abs(mario.velocity_x) > 0 and self.screen_rect.right < self.max_x_value:
-            mario.x = self.screen_rect.width / 2
-            for block in self.blocks:
-                block.x -= mario.velocity_x
-            for goomba in self.goombas:
-                goomba.x -= mario.velocity_x
-            self.max_x_value -= mario.velocity_x

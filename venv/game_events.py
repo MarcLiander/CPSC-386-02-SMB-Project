@@ -25,38 +25,38 @@ class EventLoop:
 
     def check_keydown_events(self, event):
         if event.key == pygame.K_SPACE:
-            if self.mario.is_on_ground:
-                self.mario.velocity_y = -20.01
+            if self.mario.is_on_ground and not self.mario.is_dead:
+                self.mario.velocity_y = -9.5
                 self.mario.is_on_ground = False
                 self.mario.is_jumping = True
         if event.key == pygame.K_LEFT:
             if not self.mario.is_along_wall and not self.mario.is_dead:
-                self.mario.accel_x -= 0.25
+                self.mario.accel_x -= 0.125
                 self.carry_over = False
         if event.key == pygame.K_RIGHT:
             if not self.mario.is_along_wall and not self.mario.is_dead:
-                self.mario.accel_x += 0.25
+                self.mario.accel_x += 0.125
                 self.carry_over = False
         if event.key == pygame.K_q:
             sys.exit()
 
     def check_keyup_events(self, event):
         if event.key == pygame.K_SPACE:
-            if (self.mario.velocity_y < -12.0):
-                self.mario.velocity_y = -12.0
+            if (self.mario.velocity_y < -1.0):
+                self.mario.velocity_y = -1.0
         if event.key == pygame.K_LEFT:
             if not self.carry_over and not self.mario.is_dead:
-                self.mario.accel_x += 0.25
+                self.mario.accel_x += 0.125
         if event.key == pygame.K_RIGHT:
             if not self.carry_over and not self.mario.is_dead:
-                self.mario.accel_x -= 0.25
+                self.mario.accel_x -= 0.125
 
     def update_events(self):
         if self.mario.is_dead:
             self.mario.time_alive -= 1
             self.mario.velocity_x = 0
-        self.mario.update(self.map)
         self.map.update_map(self.mario, self.stats)
+        self.mario.update(self.map)
         self.scoreboard.update_score()
         if self.mario.time_alive <= 0 and self.mario.rect.top:
             self.finished = True
@@ -66,5 +66,4 @@ class EventLoop:
         self.map.draw_map()
         self.mario.draw_mario()
         self.scoreboard.show_score()
-        print (self.scoreboard.score_str)
         pygame.display.flip()

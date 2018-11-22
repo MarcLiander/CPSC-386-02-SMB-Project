@@ -16,21 +16,24 @@ class Mario:
         self.is_along_wall = False
         self.is_dead = False
 
-        self.time_alive = 60
+        self.time_alive = 120
 
         self.x = float(self.rect.x)
 
-        self.velocity_y = 6.0
+        self.velocity_y = 3.0
         self.velocity_x = 0.0
         self.accel_x = 0.0
-        self.max_speed_x = 6.5
-        self.max_speed_y = 16.0
-        self.gravity = 1.5
+        self.max_speed_x = 4
+        self.max_speed_y = 8.0
+        self.gravity = 0.3
 
         self.color = (10, 10, 10)
 
     def update(self, map):
-        self.x += self.velocity_x
+        if not self.is_dead:
+            self.bottom_of_screen()
+
+        self.x += int(self.velocity_x)
         if self.accel_x == 0:
             self.velocity_x *= 0.9
         if abs(self.velocity_x) < 0.05:
@@ -46,7 +49,6 @@ class Mario:
         self.rect.x = self.x
         if not self.is_dead:
             self.side_of_blocks(map.blocks)
-
         if self.is_jumping:
             self.is_jumping = False
         else:
@@ -57,7 +59,7 @@ class Mario:
             self.velocity_y += self.gravity
             if self.velocity_y > self.max_speed_y:
                 self.velocity_y = self.max_speed_y
-            self.rect.y += self.velocity_y
+            self.rect.y += int(self.velocity_y)
             if not self.is_dead:
                 self.collide_with_blocks(map.blocks)
 
@@ -66,34 +68,38 @@ class Mario:
 
     def collide_with_blocks(self, blocks):
         for block in blocks:
-            if block.rect.collidepoint((self.rect.left + (self.rect.width / 2), self.rect.bottom)) or block.rect.collidepoint((self.rect.right - 4, self.rect.bottom)) or block.rect.collidepoint((self.rect.left + 4, self.rect.bottom)):
-                if self.velocity_y < 0:
+            if block.rect.collidepoint((self.rect.left + (self.rect.width / 2), self.rect.bottom)) or block.rect.collidepoint((self.rect.right - 1, self.rect.bottom)) or block.rect.collidepoint((self.rect.left + 1, self.rect.bottom)):
+                if self.velocity_y <= 0:
                     self.is_on_ground = False
                     return False
                 self.rect.y = block.rect.y - self.rect.height
                 self.velocity_y = 0
                 self.is_on_ground = True
                 return True
-            if block.rect.collidepoint((self.rect.left + (self.rect.width / 2), self.rect.top)) or block.rect.collidepoint((self.rect.right - 4, self.rect.top)) or block.rect.collidepoint((self.rect.left + 4, self.rect.top)):
+            if block.rect.collidepoint((self.rect.left + (self.rect.width / 2), self.rect.top)) or block.rect.collidepoint((self.rect.right - 1, self.rect.top)) or block.rect.collidepoint((self.rect.left + 1, self.rect.top)):
                 self.rect.y = block.rect.y + block.rect.height
                 if not self.velocity_y >= 0:
                     self.velocity_y = 0
+                block.is_headbutt = True
+                block.velocity_y = -3.5
         self.is_on_ground = False
         return False
 
     def side_of_blocks(self, blocks):
         for block in blocks:
-            if (block.rect.collidepoint((self.rect.left, self.rect.top + 6)) or block.rect.collidepoint((self.rect.left, self.rect.top + (self.rect.height / 2))) or block.rect.collidepoint((self.rect.left, self.rect.bottom - 6))) and abs(self.velocity_x) > 0:
+            if (block.rect.collidepoint((self.rect.left, self.rect.top + 1)) or block.rect.collidepoint((self.rect.left, self.rect.top + (self.rect.height / 2))) or block.rect.collidepoint((self.rect.left, self.rect.bottom - 1))) and abs(self.velocity_x) > 0:
                 self.x = block.rect.x + self.rect.width
-                self.rect.x = self.x
+                self.rect.x = int(self.x)
                 self.velocity_x = 0
                 self.is_along_wall = True
-                self.max_speed_x = 0
-            if (block.rect.collidepoint((self.rect.right, self.rect.top + 6))  or block.rect.collidepoint((self.rect.right, self.rect.top + (self.rect.height / 2))) or block.rect.collidepoint((self.rect.right, self.rect.bottom - 6))) and abs(self.velocity_x) > 0:
-                self.x = block.rect.x - self.rect.width - 0.5
-                self.rect.x = self.x
+            if (block.rect.collidepoint((self.rect.right, self.rect.top + 1))  or block.rect.collidepoint((self.rect.right, self.rect.top + (self.rect.height / 2))) or block.rect.collidepoint((self.rect.right, self.rect.bottom - 1))) and self.velocity_x >= 0:
+                self.x = block.rect.x - self.rect.width
+                self.rect.x = int(self.x)
                 self.velocity_x = 0
                 self.is_along_wall = True
-                self.max_speed_x = 0
         self.is_along_wall = False
-        self.max_speed_x = 6.5
+
+    def bottom_of_screen(self):
+        if self.rect.bottom >= self.screen_rect.bottom:
+            self.velocity_y = -4.0
+            self.is_dead = True
