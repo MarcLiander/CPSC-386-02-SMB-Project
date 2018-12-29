@@ -16,7 +16,7 @@ class Map:
         self.screen_rect = self.screen.get_rect()
         self.goombas = []
         self.blocks = []
-        self.block_image = ImageRect(screen, blockfile, 32, 32)
+        self.blockfile = blockfile
 
         self.enemy_id = 0
 
@@ -29,9 +29,19 @@ class Map:
             for ncol in range(len(row)):
                 col = row[ncol]
                 if col == 'x':
-                    self.blocks.append(Block(self.screen, ncol * dx, nrow * dy, 0))
+                    self.blocks.append(Block(self.screen, ncol * dx, nrow * dy, 0, self.blockfile))
                 if col == 'b':
-                    self.blocks.append(Block(self.screen, ncol * dx, nrow * dy, 1))
+                    self.blocks.append(Block(self.screen, ncol * dx, nrow * dy, 1, 'Images/block_tile_1.png'))
+                if col == 'r':
+                    self.blocks.append(Block(self.screen, ncol * dx, nrow * dy, 0, 'Images/block_tile_1.png'))
+                if col == 'l':
+                    self.blocks.append(Block(self.screen, ncol * dx, nrow * dy, 0, 'Images/pipe-left.png'))
+                if col == 'd':
+                    self.blocks.append(Block(self.screen, ncol * dx, nrow * dy, 0, 'Images/pipe-right.png'))
+                if col == 'y':
+                    self.blocks.append(Block(self.screen, ncol * dx, nrow * dy, 0, 'Images/pipe-left-top.png'))
+                if col == 'z':
+                    self.blocks.append(Block(self.screen, ncol * dx, nrow * dy, 0, 'Images/pipe-right-top.png'))
                 if col == 'g':
                     self.goombas.append(Goomba(self.ai_settings, self.screen, ncol * dx, nrow * dy, self.enemy_id, 0))
                     self.enemy_id += 1
@@ -41,7 +51,7 @@ class Map:
     def draw_map(self):
         for block in self.blocks:
             if block.rect.left < self.screen_rect.right:
-                block.draw_block(self.block_image.image)
+                block.draw_block()
         for goomba in self.goombas:
             if goomba.rect.left < self.screen_rect.right:
                 goomba.draw_goomba()

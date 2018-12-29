@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a10830b9-2316-40c0-946f-1ee3a9052b8f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/Levels/first_level.txt" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Levels/first_level.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Super Mario Bros.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Super Mario Bros.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/brick.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/brick.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/enemies.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/enemies.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/game_events.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/game_events.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/imagerect.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/imagerect.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/map.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/map.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/mario.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/mario.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,41 +21,31 @@
             <file pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/venv/mario.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="792">
+                  <state relative-caret-position="1394">
                     <caret line="83" column="39" selection-start-line="83" selection-start-column="39" selection-end-line="83" selection-end-column="39" />
                     <folding>
                       <element signature="e#0#13#0" expanded="true" />
-                      <marker date="1542230680386" expanded="true" signature="60:65" ph="..." />
-                      <marker date="1542230680386" expanded="true" signature="2095:2101" ph="..." />
-                      <marker date="1542230680386" expanded="true" signature="3327:3332" ph="..." />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/venv/brick.py">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="493">
-                    <caret line="29" column="46" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
-                    <folding>
-                      <element signature="e#0#13#0" expanded="true" />
-                      <marker date="1542230753811" expanded="true" signature="60:65" ph="..." />
                     </folding>
                   </state>
                 </provider>
               </entry>
             </file>
             <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/venv/brick.py">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="34">
+                    <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/venv/enemies.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="681">
-                    <caret line="72" column="86" selection-start-line="72" selection-start-column="86" selection-end-line="72" selection-end-column="86" />
+                  <state relative-caret-position="1224">
+                    <caret line="72" column="77" selection-start-line="72" selection-start-column="77" selection-end-line="72" selection-end-column="77" />
                     <folding>
                       <element signature="e#0#13#0" expanded="true" />
-                      <marker date="1542231947811" expanded="true" signature="61:66" ph="..." />
-                      <marker date="1542231947811" expanded="true" signature="769:775" ph="..." />
-                      <marker date="1542231947811" expanded="true" signature="1565:1570" ph="..." />
                     </folding>
                   </state>
                 </provider>
@@ -108,18 +92,54 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-592388335">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="py" value="303" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Python" value="303" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="py" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Python" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/venv/map.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="26" column="42" lean-forward="true" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
+            <state relative-caret-position="428">
+              <caret line="39" column="101" selection-start-line="39" selection-start-column="101" selection-end-line="39" selection-end-column="101" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
-                <marker date="1542230461346" expanded="true" signature="141:146" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/venv/imagerect.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="51" selection-start-line="7" selection-start-column="51" selection-end-line="7" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -137,21 +157,18 @@
         <entry file="file://$PROJECT_DIR$/venv/scoreboard.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="71">
-              <caret line="25" column="53" lean-forward="true" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="53" />
+              <caret line="25" column="53" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="53" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/venv/Super Mario Bros.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="-58">
+              <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
-                <marker date="1541929347254" expanded="true" signature="293:302" ph="..." />
-                <marker date="1541929347254" expanded="true" signature="321:334" ph="..." />
-                <marker date="1541929347254" expanded="true" signature="1449:1458" ph="..." />
               </folding>
             </state>
           </provider>
@@ -162,10 +179,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
               <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
-              <folding>
-                <marker date="1542227329106" expanded="true" signature="17:18" ph="..." />
-                <marker date="1542227329106" expanded="true" signature="17:22" ph="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -173,15 +186,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/venv/game_events.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
+            <state relative-caret-position="425">
               <caret line="27" column="65" selection-start-line="27" selection-start-column="65" selection-end-line="27" selection-end-column="65" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
-                <marker date="1542229321868" expanded="true" signature="140:437" ph="..." />
-                <marker date="1542229321868" expanded="true" signature="432:433" ph="..." />
-                <marker date="1542229321868" expanded="true" signature="717:726" ph="..." />
-                <marker date="1542229321868" expanded="true" signature="808:817" ph="..." />
-                <marker date="1542229321868" expanded="true" signature="1545:1554" ph="..." />
               </folding>
             </state>
           </provider>
@@ -218,22 +226,23 @@
         <option value="$PROJECT_DIR$/venv/game_stats.py" />
         <option value="$PROJECT_DIR$/venv/gameover.py" />
         <option value="$PROJECT_DIR$/venv/test.py" />
-        <option value="$PROJECT_DIR$/venv/imagerect.py" />
         <option value="$PROJECT_DIR$/venv/Super Mario Bros.py" />
         <option value="$PROJECT_DIR$/venv/settings.py" />
         <option value="$PROJECT_DIR$/venv/scoreboard.py" />
         <option value="$PROJECT_DIR$/venv/game_events.py" />
-        <option value="$PROJECT_DIR$/venv/map.py" />
         <option value="$PROJECT_DIR$/venv/mario.py" />
-        <option value="$PROJECT_DIR$/venv/brick.py" />
         <option value="$PROJECT_DIR$/venv/enemies.py" />
+        <option value="$PROJECT_DIR$/venv/brick.py" />
+        <option value="$PROJECT_DIR$/venv/map.py" />
+        <option value="$PROJECT_DIR$/venv/imagerect.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="953" />
-    <option name="width" value="974" />
-    <option name="height" value="1047" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -255,36 +264,27 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="Super Mario Bros Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Super Mario Bros Project" type="462c0819:PsiDirectoryNode" />
+              <item name="CPSC-386-02-SMB-Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CPSC-386-02-SMB-Project" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Super Mario Bros Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Super Mario Bros Project" type="462c0819:PsiDirectoryNode" />
+              <item name="CPSC-386-02-SMB-Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CPSC-386-02-SMB-Project" type="462c0819:PsiDirectoryNode" />
               <item name="venv" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Super Mario Bros Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Super Mario Bros Project" type="462c0819:PsiDirectoryNode" />
-              <item name="venv" type="462c0819:PsiDirectoryNode" />
-              <item name="Images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Super Mario Bros Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.smartKeys" />
   </component>
   <component name="PyConsoleOptionsProvider">
@@ -315,9 +315,9 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="D:\Python\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/venv" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/venv/Super Mario Bros.py" />
@@ -398,14 +398,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="953" y="0" width="974" height="1047" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16559829" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.08166491" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286334" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32968238" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3286334" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -452,33 +453,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/vpython/vpython.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/vpython/vpython.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Temp/Temp1_Super-Mario-Bros-Python-v0.1release.zip/Super-Mario-Bros-Python-v0.1release/gamelib/game.py" />
     <entry file="file://$PROJECT_DIR$/venv/test.py" />
-    <entry file="file://$PROJECT_DIR$/venv/imagerect.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/game_events.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="27" column="65" selection-start-line="27" selection-start-column="65" selection-end-line="27" selection-end-column="65" />
           <folding>
-            <marker date="1542227329106" expanded="true" signature="17:18" ph="..." />
-            <marker date="1542227329106" expanded="true" signature="17:22" ph="..." />
+            <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/scoreboard.py">
+    <entry file="file://$PROJECT_DIR$/venv/mario.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="25" column="53" lean-forward="true" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="53" />
+        <state relative-caret-position="1394">
+          <caret line="83" column="39" selection-start-line="83" selection-start-column="39" selection-end-line="83" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/enemies.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1224">
+          <caret line="72" column="77" selection-start-line="72" selection-start-column="77" selection-end-line="72" selection-end-column="77" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Super Mario Bros.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-58">
+          <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -489,79 +510,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/game_events.py">
+    <entry file="file://$PROJECT_DIR$/venv/scoreboard.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="27" column="65" selection-start-line="27" selection-start-column="65" selection-end-line="27" selection-end-column="65" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-            <marker date="1542229321868" expanded="true" signature="140:437" ph="..." />
-            <marker date="1542229321868" expanded="true" signature="432:433" ph="..." />
-            <marker date="1542229321868" expanded="true" signature="717:726" ph="..." />
-            <marker date="1542229321868" expanded="true" signature="808:817" ph="..." />
-            <marker date="1542229321868" expanded="true" signature="1545:1554" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/mario.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="83" column="39" selection-start-line="83" selection-start-column="39" selection-end-line="83" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-            <marker date="1542230680386" expanded="true" signature="60:65" ph="..." />
-            <marker date="1542230680386" expanded="true" signature="2095:2101" ph="..." />
-            <marker date="1542230680386" expanded="true" signature="3327:3332" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/map.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="26" column="42" lean-forward="true" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-            <marker date="1542230461346" expanded="true" signature="141:146" ph="..." />
-          </folding>
+        <state relative-caret-position="71">
+          <caret line="25" column="53" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/venv/brick.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="46" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
+        <state relative-caret-position="34">
+          <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/map.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="39" column="101" selection-start-line="39" selection-start-column="101" selection-end-line="39" selection-end-column="101" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <marker date="1542230753811" expanded="true" signature="60:65" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/enemies.py">
+    <entry file="file://$PROJECT_DIR$/venv/imagerect.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="681">
-          <caret line="72" column="86" selection-start-line="72" selection-start-column="86" selection-end-line="72" selection-end-column="86" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-            <marker date="1542231947811" expanded="true" signature="61:66" ph="..." />
-            <marker date="1542231947811" expanded="true" signature="769:775" ph="..." />
-            <marker date="1542231947811" expanded="true" signature="1565:1570" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Super Mario Bros.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-            <marker date="1541929347254" expanded="true" signature="293:302" ph="..." />
-            <marker date="1541929347254" expanded="true" signature="321:334" ph="..." />
-            <marker date="1541929347254" expanded="true" signature="1449:1458" ph="..." />
-          </folding>
+        <state relative-caret-position="119">
+          <caret line="7" column="51" selection-start-line="7" selection-start-column="51" selection-end-line="7" selection-end-column="51" />
         </state>
       </provider>
     </entry>

@@ -5,7 +5,7 @@ class ImageRect:
         self.screen = screen
         name = imagename
 
-        img = pygame.image.load(name).convert()
+        img = pygame.image.load(name).convert_alpha()
         self.rect = img.get_rect()
         self.rect.left -= self.rect.width
         self.rect.top -= self.rect.height

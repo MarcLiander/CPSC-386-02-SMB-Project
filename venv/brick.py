@@ -1,8 +1,9 @@
 import pygame
 from pygame.sprite import Sprite
+from imagerect import ImageRect
 
 class Block:
-    def __init__(self, screen, x, y, type):
+    def __init__(self, screen, x, y, type, blockfile):
         self.screen = screen
         self.rect = pygame.Rect((x, y), (32, 32))
 
@@ -11,6 +12,8 @@ class Block:
         self.velocity_y = 3.0
         self.gravity = 0.3
         self.original_y = float(self.rect.y)
+
+        self.image = ImageRect(self.screen, blockfile, 32, 32)
 
         self.type = type
 
@@ -29,5 +32,6 @@ class Block:
             self.is_headbutt = False
             self.rect.y = int(self.original_y)
 
-    def draw_block(self, block_image):
-        self.screen.blit(block_image, self.rect)
+    def draw_block(self):
+        self.screen.blit(self.image.image, self.rect)
+
