@@ -42,6 +42,10 @@ class Map:
                     self.blocks.append(Block(self.screen, ncol * dx, nrow * dy, 0, 'Images/pipe-left-top.png'))
                 if col == 'z':
                     self.blocks.append(Block(self.screen, ncol * dx, nrow * dy, 0, 'Images/pipe-right-top.png'))
+                if col == 'v':
+                    self.blocks.append(Block(self.screen, ncol * dx, nrow * dy, 0, 'Images/pole-with-flag.png'))
+                if col == 'n':
+                    self.blocks.append(Block(self.screen, ncol * dx, nrow * dy, 0, 'Images/pole.png'))
                 if col == 'g':
                     self.goombas.append(Goomba(self.ai_settings, self.screen, ncol * dx, nrow * dy, self.enemy_id, 0))
                     self.enemy_id += 1

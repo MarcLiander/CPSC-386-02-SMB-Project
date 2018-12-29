@@ -21,7 +21,7 @@ class Game:
             self.stats = GameStats()
             self.scoreboard = Scoreboard(self.ai_settings, self.screen, self.stats)
             self.clock = pygame.time.Clock()
-            self.gameover = Gameover(self.ai_settings, self.screen)
+            self.gameover = Gameover(self.ai_settings, self.screen, self.stats)
 
         def play(self):
             while True:
@@ -39,7 +39,12 @@ class Game:
                     self.stats.lives -= 1
                     self.stats.score = 0
                 self.stats.reset_stats()
-                self.gameover.show_gameover()
+                if self.stats.win:
+                    self.gameover.show_winover()
+                    self.stats.final_score = 0
+                    self.stats.win = False
+                else:
+                    self.gameover.show_gameover()
                 pygame.time.wait(3000)
 
 

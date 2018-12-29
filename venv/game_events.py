@@ -52,6 +52,11 @@ class EventLoop:
                 self.mario.accel_x -= 0.125
 
     def update_events(self):
+        if self.mario.rect.x > 780:
+            self.finished = True
+            self.stats.lives = 0
+            self.stats.final_score = self.stats.score
+            self.stats.win = True
         if self.mario.is_dead:
             self.mario.time_alive -= 1
             self.mario.velocity_x = 0

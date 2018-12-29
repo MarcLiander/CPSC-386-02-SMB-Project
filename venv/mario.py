@@ -1,5 +1,6 @@
 import pygame
 from pygame.sprite import Sprite
+from spritesheet import SpriteSheet
 
 class Mario:
     def __init__(self, ai_settings, screen):
@@ -8,8 +9,18 @@ class Mario:
         self.screen = screen
         self.ai_settings = ai_settings
 
-        self.rect = pygame.Rect((ai_settings.mario_width * 3, ai_settings.screen_height - ai_settings.mario_height * 9), (ai_settings.mario_width, ai_settings.mario_height))
+        self.sprite = SpriteSheet('Images/mario.png')
+
+        self.index = 0
+        self.state = 0
+        self.timer = 0
+
+        self.image = self.sprite.image_get((32 * self.index, 32 * self.state, 32, 32))
+        self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()
+
+        self.rect.x = ai_settings.mario_width * 3
+        self.rect.y = ai_settings.screen_height - ai_settings.mario_height * 9
 
         self.is_on_ground = False
         self.is_jumping = False
@@ -32,6 +43,16 @@ class Mario:
     def update(self, map):
         if not self.is_dead:
             self.bottom_of_screen()
+
+
+        if self.is_dead:
+            self.state = 3
+        elif not self.is_on_ground:
+            self.state = 2
+        elif abs(self.velocity_x) > 0:
+            self.state = 1
+        else:
+            self.state = 0
 
         self.x += int(self.velocity_x)
         if self.accel_x == 0:
@@ -63,8 +84,20 @@ class Mario:
             if not self.is_dead:
                 self.collide_with_blocks(map.blocks)
 
+        if self.timer < 3:
+            self.timer += 1
+        else:
+            self.index += 1
+            if self.index >= 8:
+                self.index = 0
+            self.image = self.sprite.image_get((32 * self.index, 32 * self.state, 32, 32))
+            self.timer = 0
+
     def draw_mario(self):
-        pygame.draw.rect(self.screen, self.color, self.rect)
+        if self.velocity_x < 0:
+            self.screen.blit(pygame.transform.flip(self.image, True, False), self.rect)
+        else:
+            self.screen.blit(self.image, self.rect)
 
     def collide_with_blocks(self, blocks):
         for block in blocks:
